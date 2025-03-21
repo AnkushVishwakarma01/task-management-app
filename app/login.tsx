@@ -17,7 +17,7 @@ export default function LoginScreen() {
       return;
     }
     const response = await postRequest('/auth/login', { email, password });
-    console.log('Response: ', response);
+    // console.log('Response: ', response);
     if (response.token) {
       setIsCredentialValid(true);
       AsyncStorage.setItem('token', response.token);

@@ -1,6 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const ENDPOINT = 'https://task-management-server-five-navy.vercel.app/api';
+// const ENDPOINT = 'http://192.168.0.104:3000/api';
+
 async function getRequest(url) {
   const token = await AsyncStorage.getItem('token');
   try {
@@ -11,9 +13,6 @@ async function getRequest(url) {
         'Content-Type': 'application/json'
       }
     });
-    // if (!response.ok) {
-    //   throw new Error(`GET request failed with status: ${response.status}`);
-    // }
     return await response.json();
   } catch (error) {
     console.error('Error in GET request:', error);
