@@ -11,11 +11,11 @@ Follow these steps to install the required packages and run the application:
 ### Steps to Install
 1. Clone the repository:
   ```bash
-  git clone https://github.com/your-repo/TaskManagementApp.git
+  git clone https://github.com/AnkushVishwakarma01/task-management-app.git
   ```
 2. Navigate to the project directory:
   ```bash
-  cd TaskManagementApp
+  cd task-management-app
   ```
 3. Install dependencies:
   ```bash
