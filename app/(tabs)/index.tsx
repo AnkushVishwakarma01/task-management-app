@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import {useFocusEffect} from '@react-navigation/native';
 import { View, Text, TextInput, TouchableOpacity, FlatList, Modal, StyleSheet, RefreshControl } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
@@ -54,6 +55,10 @@ export default function App() {
     if (tasks.error) return logout();
     setTasks(tasks);
   }
+
+  useFocusEffect(useCallback(() => {
+    fetchAllTasks();
+  }, []));
 
   useEffect(() => {
     AsyncStorage.getItem('token', (err, result) => {
